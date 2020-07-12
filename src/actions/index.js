@@ -19,12 +19,12 @@ export const createStream = (formValues) => async (dispatch) => {
 };
 
 export const fetchStreams = () => async (dispatch) => {
-  const response = await streams.post(`/streams/${id}`);
+  const response = await streams.get(`/streams/`);
   dispatch({ type: "FETCH_STREAMS", payload: response.data });
 };
 
 export const fetchStream = (id) => async (dispatch) => {
-  const response = await streams.post(`/streams/${id}`);
+  const response = await streams.get(`/streams/${id}`);
   dispatch({ type: "FETCH_STREAM", payload: response.data });
 };
 
